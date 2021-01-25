@@ -7,19 +7,38 @@ namespace Organizador_Aniversarios
     {
         static void Main(string[] args)
         {
-            string nome = null;
+            bool c = true;
 
-            Console.Write("Nome: ");
-            nome = Console.ReadLine();
+            while (c)
+            {
+                string nome = null;
 
-            Console.Write("Data de Aniversário: (dia/mês/ano) ");
-            string dataUsuario = Console.ReadLine();
+                Console.Write("\nNome: ");
+                nome = Console.ReadLine();
 
-            DateTime data = DateTime.ParseExact(dataUsuario, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                Console.Write("Data de Aniversário: (dia/mês/ano) ");
+                string dataUsuario = Console.ReadLine();
 
-            Aniversariante pessoa = new Aniversariante(nome, data);
+                DateTime data = DateTime.ParseExact(dataUsuario, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            Console.WriteLine("\n" + pessoa);
+                Aniversariante pessoa = new Aniversariante(nome, data);
+
+                Console.WriteLine("\n" + pessoa);
+
+
+                // .......................... Repetir? ............................
+
+                Console.Write("\n......................... \n\nMais uma?(sim/não) ");
+
+                if (Console.ReadLine() == "sim")
+                {
+                    c = true;
+                }
+                else
+                {
+                    c = false;
+                }
+            }
         }
     }
 }
